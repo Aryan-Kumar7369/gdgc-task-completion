@@ -18,7 +18,7 @@ import { error } from 'console'
 const app = express()
 const port = process.env.PORT
 const connectionString = process.env.connection_string
-const authenticated = 0
+let authenticated = 0
 
 
 // Database Connection
