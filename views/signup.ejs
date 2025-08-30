@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Together - Sign Up</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for 'Inter' font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body class="bg-black">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Section -->
+        <header class="flex items-center justify-center py-12 px-4">
+            <!-- Logo -->
+            <img src= "https://res.cloudinary.com/ddkocwzxf/image/upload/v1756308551/Screenshot_2025-08-27_205859_zclpqm.png"width="40" height="40" viewBox="0 0 24 24" fill="none"  class="mr-3">
+                <path d="M4 11L1 14L4 17L7 14L4 11Z" fill="#FBCB0A"/>
+                <path d="M11 20L14 23L17 20L14 17L11 20Z" fill="#F25116"/>
+                <path d="M20 11L17 14L20 17L23 14L20 11Z" fill="#00A455"/>
+                <path d="M11 4L14 1L17 4L14 7L11 4Z" fill="#4285F4"/>
+            </img>
+            <h1 id="animated-title" class="text-white text-2xl font-semibold">Code Together</h1>
+        </header>
+
+        <!-- Form Section -->
+        <main class=" flex flex-col justify-end">
+            <div class="bg-white rounded-3xl p-8 md:p-12 w-full max-w-md mx-auto">
+                <form>
+                    <div class="mb-8">
+                        <input type="text" placeholder="Full Name" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                    </div>
+                    <div class="mb-8">
+                        <input type="email" placeholder="Email Address" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                    </div>
+                    <div class="mb-8">
+                        <input type="text" placeholder="Scholar Id" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                    </div>
+                    <div class="mb-10">
+                        <input type="password" placeholder="Password" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                    </div>
+                    <button type="submit" class="w-full bg-black text-white font-bold py-4 rounded-full hover:bg-gray-800 transition duration-300">
+                        SIGN UP
+                    </button>
+                </form>
+                <p class="text-center text-gray-500 mt-8">
+                    Already have an account? <a href="/signin" class="font-semibold text-black hover:underline">Login</a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/loginAnimation.js"></script>
+
+</body>
+</html>

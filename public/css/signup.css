@@ -1,0 +1,38 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom style for the input fields to have only a bottom border */
+.input-bottom-border {
+  border: none;
+  border-bottom: 1px solid #E5E7EB;
+  /* gray-200 */
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input-bottom-border:focus {
+  outline: none;
+  border-bottom-color: #3B82F6;
+  /* blue-500 */
+}
+
+/* Keyframe animation for the letter fade effect */
+@keyframes letter-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Class to apply the animation to each letter */
+.animated-letter {
+  opacity: 0;
+  animation: letter-fade 5s infinite;
+}
