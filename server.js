@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
   if (authenticated == 1) {
     res.render('index.ejs')
   } else {
-    res.redirect('signup.ejs')
+    res.redirect('/signup')
   }
 })
 
