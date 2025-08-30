@@ -18,6 +18,7 @@ import { error } from 'console'
 const app = express()
 const port = process.env.PORT
 const connectionString = process.env.connection_string
+const authenticated = 0
 
 
 // Database Connection
@@ -48,17 +49,22 @@ app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
   // res.render('index.ejs')
-  res.render('index.ejs')
+  if (authenticated == 1) {
+    res.render('index.ejs')
+  }
 })
 
 app.get('/signin', (req, res) => {
-  // res.render('index.ejs')
-  res.render('signin.ejs')
+  if (authenticated == 1) {
+    res.render('signin.ejs')
+  }
+  
 })
 
 app.get('/signup', (req, res) => {
-  // res.render('index.ejs')
-  res.render('signup.ejs')
+  if (authenticated == 1) {
+    res.render('signup.ejs')
+  }
 })
 
 app.listen(port, () => {
@@ -91,6 +97,7 @@ app.post('/login', async (req, res) => {
       if (error) {
         res.redirect('/signin')
       } else if (result) {
+        authenticated = 1
         res.redirect('/')
       }
       else {
