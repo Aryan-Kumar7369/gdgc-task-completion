@@ -51,11 +51,15 @@ app.get('/', (req, res) => {
   // res.render('index.ejs')
   if (authenticated == 1) {
     res.render('index.ejs')
+  } else {
+    res.redirect('signup.ejs')
   }
 })
 
 app.get('/signin', (req, res) => {
   if (authenticated == 1) {
+    res.redirect('/')
+  } else {
     res.render('signin.ejs')
   }
   
@@ -63,6 +67,8 @@ app.get('/signin', (req, res) => {
 
 app.get('/signup', (req, res) => {
   if (authenticated == 1) {
+    res.redirect('/')
+  } else {
     res.render('signup.ejs')
   }
 })
