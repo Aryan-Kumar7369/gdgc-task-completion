@@ -31,15 +31,15 @@
         <!-- Form Section -->
         <main class="flex flex-col justify-end">
             <div class="bg-white rounded-3xl p-8 md:p-12 w-full max-w-md mx-auto">
-                <form>
+                <form action="/login" method="post">
                     <div class="mb-8">
-                        <input type="email" placeholder="Email Address" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                        <input type="email" name="email" placeholder="Email Address" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
                     </div>
                     <div class="mb-8">
-                        <input type="text" placeholder="Scholar Id" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                        <input type="text" name="schId" placeholder="Scholar Id" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
                     </div>
                     <div class="mb-6">
-                        <input type="password" placeholder="Password" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
+                        <input type="password" name="password" placeholder="Password" class="w-full bg-transparent py-2 input-bottom-border text-gray-700">
                     </div>
                     <div class="text-right mb-8">
                         <a href="#" class="text-sm text-gray-500 hover:underline">Forget Password?</a>
