@@ -1,0 +1,53 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHQlMjBza3klMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    /* Prevents scrollbars on the main body */
+}
+
+.app-container {
+    max-width: 420px;
+    width: 100%;
+    height: 100vh;
+    max-height: 900px;
+    /* Glassmorphism effect */
+    background-color: rgba(20, 20, 20, 0.4);
+    /* Semi-transparent background */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    /* Safari support */
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Custom styles for podium elements */
+.podium-item-1 {
+    /* 2nd Place */
+    height: 100px;
+    align-self: flex-end;
+}
+
+.podium-item-2 {
+    /* 1st Place */
+    height: 120px;
+    align-self: flex-end;
+}
+
+.podium-item-3 {
+    /* 3rd Place */
+    height: 90px;
+    align-self: flex-end;
+}
+
+/* Style for editable names */
+[contenteditable]:focus {
+    outline: 2px solid #3b82f6;
+    border-radius: 4px;
+    background-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
