@@ -11,6 +11,8 @@ import bcrypt from 'bcrypt'
 
 import path from 'path'
 
+import session from 'express-session'
+
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { error } from 'console'
@@ -18,7 +20,6 @@ import { error } from 'console'
 const app = express()
 const port = process.env.PORT
 const connectionString = process.env.connection_string
-let authenticated = 0
 
 
 // Database Connection
@@ -32,6 +33,16 @@ async function connectToMongoDB() {
 }
 
 connectToMongoDB();
+
+
+// Creating session
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+}))
+
 
 // Serving static files
 
@@ -47,30 +58,19 @@ app.use(express.urlencoded({extended: false}))
 
 // Handling get requests
 
-app.get('/', (req, res) => {
-  // res.render('index.ejs')
-  if (authenticated == 1) {
+app.get('/', isAuthenticated, (req, res) => {
+
     res.render('index.ejs')
-  } else {
-    res.redirect('/signup')
-  }
 })
 
-app.get('/signin', (req, res) => {
-  if (authenticated == 1) {
-    res.redirect('/')
-  } else {
+app.get('/signin', isNotAuthenticated, (req, res) => {
     res.render('signin.ejs')
-  }
-  
+
 })
 
-app.get('/signup', (req, res) => {
-  if (authenticated == 1) {
-    res.redirect('/')
-  } else {
+app.get('/signup', isNotAuthenticated, (req, res) => {
     res.render('signup.ejs')
-  }
+
 })
 
 app.listen(port, () => {
@@ -103,7 +103,7 @@ app.post('/login', async (req, res) => {
       if (error) {
         res.redirect('/signin')
       } else if (result) {
-        authenticated = 1
+        req.session.isLoggedIn = true
         res.redirect('/')
       }
       else {
@@ -115,3 +115,21 @@ app.post('/login', async (req, res) => {
     console.log(error)
   }
 })
+
+// Function for authentication
+
+function isAuthenticated(req, res, next) {
+  if (req.session.isLoggedIn) {
+    next()  
+  } else {
+    res.redirect('/signup')
+  }
+}
+
+function isNotAuthenticated(req, res, next) {
+  if (req.session.isLoggedIn) {
+    res.redirect('/')  
+  } else {
+    next()
+  }
+}
