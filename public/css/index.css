@@ -1,40 +1,40 @@
-*{
-    margin: 0px;
-}
-
-body{
-    background-image: url('/images/bg_game_img.jpg');
-    background-repeat: no-repeat;
+/* Custom styles to extend Tailwind and match the design */
+body {
+    font-family: 'Inter', sans-serif;
+    /* New background image for an Apple-like feel */
+    background-image: url('https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHQlMjBza3klMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    margin: 40px 130px 0px 130px;
 }
 
-.header{
-    background-color: #05DF72;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    padding: 14px;
-    border-radius: 55px;
+/* Defining custom transparent colors for task items */
+.task-bg-1 {
+    background-color: rgba(99, 227, 255, 0.2);
 }
 
-.headText{
-    font-size: 50px;
-    color: #441306;
+/* Light Cyan */
+.task-bg-2 {
+    background-color: rgba(255, 158, 158, 0.2);
 }
 
-.userDetails{
-    display: flex;
-    background-color: aqua;
-    width: 50%;
-    height: 170px;
-    margin-top: 30px;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    flex-direction: column;
+/* Light Pink */
+.task-bg-3 {
+    background-color: rgba(255, 243, 158, 0.2);
+}
+
+/* Light Yellow */
+.task-bg-4 {
+    background-color: rgba(220, 158, 255, 0.2);
+}
+
+/* Light Purple */
+.task-bg-5 {
+    background-color: rgba(158, 255, 163, 0.2);
+}
+
+/* Light Green */
+
+/* The main app container will have a max-width and be centered on larger screens */
+.app-container {
+    max-height: 790px;
 }

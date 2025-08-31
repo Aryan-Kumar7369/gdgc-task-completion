@@ -21,6 +21,7 @@ const app = express()
 const port = process.env.PORT
 const connectionString = process.env.connection_string
 
+let loggedUser = {}
 
 // Database Connection
 async function connectToMongoDB() {
@@ -60,7 +61,12 @@ app.use(express.urlencoded({extended: false}))
 
 app.get('/', isAuthenticated, (req, res) => {
 
-    res.render('index.ejs')
+    res.render('index.ejs', {items: loggedUser})
+})
+
+app.get('/leaderboard', isAuthenticated, (req, res) => {
+
+    res.render('leaderboard.ejs')
 })
 
 app.get('/signin', isNotAuthenticated, (req, res) => {
@@ -98,11 +104,13 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({email_id: req.body.email})
+    loggedUser = user
     const password = req.body.password
     bcrypt.compare(password, user.password, (error, result) => {
       if (error) {
         res.redirect('/signin')
       } else if (result) {
+        
         req.session.isLoggedIn = true
         res.redirect('/')
       }

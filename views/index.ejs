@@ -3,35 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Developer Group - NIT Silchar</title>
+    <title>Lookout for GDGC</title>
+    
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for 'Inter' font -->
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles can be added here if needed */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/index.css">
 </head>
-<body class="bg-black text-white">
+<body class="flex items-center justify-center p-4">
 
-    <!-- Main container to center the content -->
-    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+    <!-- App Container: Updated with more subtle glassmorphism -->
+    <div class="app-container w-full bg-gray-900/40 backdrop-blur-3xl rounded-[50px] shadow-2xl flex flex-col overflow-hidden relative border border-white/20">
+        
+        <!-- Header Section -->
+        <header class="pt-10 pb-6 px-6 text-white">
+            <!-- Top bar: Profile and Notifications -->
+            <div class="flex justify-between items-center mb-6">
+                <i class="fas fa-user-circle text-3xl text-gray-200 cursor-pointer"></i>
+                <div class="flex items-center gap-3">
+                    <span class="bg-gray-500/50 text-white text-sm font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">SchId : <%= items.sch_id %></span>
+                    <i class="fas fa-bell text-2xl text-gray-200"></i>
+                </div>
+            </div>
 
-        <!-- Image Logo -->
-        <div class="mb-8">
-            <!-- Updated the image URL to the new one provided -->
-            <img src="https://res.cloudinary.com/ddkocwzxf/image/upload/v1756308280/Screenshot_2025-08-27_205430_kqc57c.png" alt="GDG Logo" class="w-32 h-auto">
-        </div>
+            <!-- Status Icons: Updated for a softer look -->
+            <div class="flex justify-center items-center gap-3 mb-5">
+                <div class="bg-white/20 border border-white/20 text-white w-12 h-12 rounded-2xl flex items-center justify-center font-extrabold text-xl">G</div>
+                <div class="bg-white/20 border border-white/20 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-lock"></i></div>
+                <div class="bg-white/20 border border-white/20 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-lock"></i></div>
+                <div class="bg-white/20 border border-white/20 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-lock"></i></div>
+            </div>
 
-        <!-- Text Content -->
-        <div class="text-center">
-            <h1 class="text-2xl md:text-3xl font-medium leading-tight">Google Developer Group on Campus</h1>
-            <p class="text-xl md:text-2xl font-light mt-2">NIT Silchar</p>
+            <!-- Timer -->
+            <div class="w-fit mx-auto bg-white/20 border border-white/20 text-white font-semibold text-2xl tracking-widest px-6 py-2 rounded-full uppercase"> Welcome 
+                <%=  items.name %>!
+            </div>
+        </header>
+
+        <!-- Main Content: Task List with a refined glass effect -->
+        <main class="flex-1 bg-white/20 backdrop-blur-3xl rounded-t-[40px] p-5 pt-6 relative overflow-y-auto border-t border-white/20">
+            <div class="space-y-4 pb-24"> <!-- Padding bottom to avoid overlap with nav -->
+                
+                <!-- Task Items with transparent, blurred backgrounds -->
+                <div class="task-bg-1 flex items-center justify-between p-5 rounded-2xl shadow-lg backdrop-blur-md border border-white/10">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">Task-01</p>
+                        <h2 class="text-xl font-bold text-black">GDGC Senior Safari</h2>
+                    </div>
+                    <div class="bg-blue-500/80 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="task-bg-2 flex items-center justify-between p-5 rounded-2xl shadow-lg backdrop-blur-md border border-white/10">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">Task-02</p>
+                        <h2 class="text-xl font-bold text-black">The Duet Dare</h2>
+                    </div>
+                    <div class="bg-blue-500/80 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="task-bg-3 flex items-center justify-between p-5 rounded-2xl shadow-lg backdrop-blur-md border border-white/10">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">Task-03</p>
+                        <h2 class="text-xl font-bold text-black">Reel Rumble</h2>
+                    </div>
+                    <div class="bg-blue-500/80 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="task-bg-4 flex items-center justify-between p-5 rounded-2xl shadow-lg backdrop-blur-md border border-white/10">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">Task-04</p>
+                        <h2 class="text-xl font-bold text-black">Decode & Conquer</h2>
+                    </div>
+                    <div class="bg-blue-500/80 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="task-bg-5 flex items-center justify-between p-5 rounded-2xl shadow-lg backdrop-blur-md border border-white/10">
+                    <div>
+                        <p class="text-sm font-medium text-gray-800">Task-05</p>
+                        <h2 class="text-xl font-bold text-black">Glitch</h2>
+                    </div>
+                    <div class="bg-blue-500/80 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 p-0.5 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-400 to-blue-500">
+            <nav class="bg-black/80 backdrop-blur-md rounded-full p-1.5 flex items-center gap-2 border border-white/20">
+                <div class="bg-white text-black w-20 h-12 rounded-full flex items-center justify-center">
+                    <i class="fas fa-home text-2xl"></i>
+                </div>
+                <div class="w-14 h-12 flex items-center justify-center pr-2 cursor-pointer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" class="text-gray-300" fill="currentColor">
+                        <rect x="2" y="12" width="5" height="8" rx="1.5"></rect>
+                        <rect x="9.5" y="4" width="5" height="16" rx="1.5"></rect>
+                        <rect x="17" y="8" width="5" height="12" rx="1.5"></rect>
+                    </svg>
+                </div>
+            </nav>
         </div>
 
     </div>
